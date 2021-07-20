@@ -1,0 +1,73 @@
+environment:
+  matrix:
+    # For Python versions available on Appveyor, see
+    # http://www.appveyor.com/docs/installed-software#python
+    - PYTHON: "C:\\Python36-x64"
+
+# Do not build feature branch with open Pull Requests
+skip_branch_with_pr: true
+
+init:
+  # exit if secure variables are unset (saves time if fired by a non-team pull request)
+  - ps: if ($env:GH_SSH_PRIVATE_KEY -eq $null) { exit }
+
+  - git config --global user.name oll-bot
+  - git config --global user.email developers@openlawlib.org
+
+install:
+  # upgrade pip
+  - "%PYTHON%\\python.exe -m pip install --upgrade pip"
+
+  # the only way we can use the deploy key is by putting it in an environment variable (see above)
+  # and then using PowerShell (ps) to copy the environment variable into a file (see below)
+  # begin/end key lines should be in the environment variable
+  - ps: $key = "-----BEGIN RSA PRIVATE KEY-----`n"
+  - ps: $key += $env:GH_SSH_PRIVATE_KEY.Replace(" ", "`n")
+  - ps: $key += "`n-----END RSA PRIVATE KEY-----`n"
+  - ps: Set-Content c:\users\appveyor\.ssh\id_rsa $key
+  - ps: $fileContent = "-----BEGIN RSA PRIVATE KEY-----`n"
+  - ps: $fileContent += $env:snapshot_key.Replace(" ", "`n")
+  - ps: $fileContent += "`n-----END RSA PRIVATE KEY-----`n"
+  - ps: Set-Content c:\users\appveyor\snapshot $fileContent
+  - ps: $fileContent = "-----BEGIN RSA PRIVATE KEY-----`n"
+  - ps: $fileContent += $env:timestamp_key.Replace(" ", "`n")
+  - ps: $fileContent += "`n-----END RSA PRIVATE KEY-----`n"
+  - ps: Set-Content c:\users\appveyor\timestamp $fileContent
+
+
+before_build:
+  - git clone git@github.com:DCCouncil/law-xml.git ..\DCCouncil\law-xml
+  - git clone git@github.com:DCCouncil/law-html.git ..\DCCouncil\law-html
+  - git clone  git@github.com:DCCouncil/law-xml-codified.git ..\DCCouncil\law-xml-codified
+
+  - git -C ..\%APPVEYOR_PROJECT_SLUG% remote set-url origin git@github.com:DCCouncil/law.git
+
+  - "%PYTHON%\\python.exe -m pip -q install wheel"
+  - "%PYTHON%\\python.exe -m pip -q install -r requirements.txt"
+  # print out the git commits for each repo
+  - git -C ..\DCCouncil\law-xml rev-parse HEAD
+  - git -C ..\DCCouncil\law-xml-codified rev-parse HEAD
+  - git -C ..\DCCouncil\law-html rev-parse HEAD
+
+
+build_script:
+   - ps: $env:FLAG = if ($env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null) { "--deploy" }
+
+   # merge commits of update or speculative branches
+   - "%PYTHON%\\python.exe  -m oll.tools.cli ci merge_commits --library-root .. --auth ../%APPVEYOR_PROJECT_SLUG% %FLAG%"
+
+   # update timestamp and/or snapshot metadata files if about to expire
+   # if previous command merges something to master, this command won't update anything
+   - "%PYTHON%\\python.exe -m oll.tools.cli ci update_timestamp_and_snapshot --auth ../%APPVEYOR_PROJECT_SLUG% --expires-in-next-hours  %SCHEDULED_BUILD_INTERVAL% %FLAG%"
+
+
+notifications:
+  - provider: Slack
+    incoming_webhook:
+      # post to the fire channel
+      secure: KUaR+KAqX1jU0LF7kRDKHHGEAoItFzIHSjcreyRvnrT1vcX5+4iV77Ivysxl8jhh8ocUE0JCcmcKI0xPTb+M+EMfb8xk9L7+XCTdNubjU5w=
+    on_build_success: false
+
+
+test_script:
+  - echo Skipping doomed test discovery to save time
