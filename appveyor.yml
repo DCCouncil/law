@@ -54,11 +54,11 @@ build_script:
    - ps: $env:FLAG = if ($env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null) { "--deploy" }
 
    # merge commits of update or speculative branches
-   - "%PYTHON%\\python.exe  -m oll.tools.cli ci merge_commits --library-root .. --auth ../%APPVEYOR_PROJECT_SLUG% %FLAG%"
+   - "%PYTHON%\\python.exe  -m oll.tools.cli ci merge-commits --library-root .. --auth ../%APPVEYOR_PROJECT_SLUG% %FLAG%"
 
    # update timestamp and/or snapshot metadata files if about to expire
    # if previous command merges something to master, this command won't update anything
-   - "%PYTHON%\\python.exe -m oll.tools.cli ci update_timestamp_and_snapshot --auth ../%APPVEYOR_PROJECT_SLUG% --expires-in-next-hours  %SCHEDULED_BUILD_INTERVAL% %FLAG%"
+   - "%PYTHON%\\python.exe -m oll.tools.cli ci update-timestamp-and-snapshot --auth ../%APPVEYOR_PROJECT_SLUG% --expires-in-next-hours  %SCHEDULED_BUILD_INTERVAL% %FLAG%"
 
 
 notifications:
