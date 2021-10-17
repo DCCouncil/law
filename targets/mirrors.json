@@ -1,5 +1,6 @@
 {
     "mirrors": [
+        "git@github.com:{org_name}/{repo_name}.git",
         "https://github.com/DCCouncil/{repo_name}.git"
     ]
 }
