@@ -2,7 +2,7 @@
  "signatures": [
   {
    "keyid": "3ee0cbbdea49d1698ee17d6eb1f6c160315800026dfc29f810e0a216fa1b7e68",
-   "sig": "da59976d6d61c250dd7f2b5e291f3f45183056a42def292f92b0d2683675972c272dfe3cd97cff971581ac062e82c2adf9051f13db04edacba689ddeb8d2a272aa4d6472496465dc91fc61b305a91bc54b66c26cf333bf50b33f84a30cb2203dbbd84e2f47189b83809ddfff34e0990f9a55d36376153cdd289973093df1c4a46352fb4972c9199d31863a5d063267ee3219c1c9a8446aaf7a5d2fc0e94df22bb06e3411c4a306662d9cf9c4ad037d2c0274157cc45e38000d4466f262400b8e2d437c7a25368660ab6fbf3def1b23e8ae9edd9ebd94caa46afab6b76da0f0560fa12fc1f3f24efe398f880c6a991ff0e0e2223c729d7cc6044884f8a6ceb557"
+   "sig": "cd62de18ba5e5ba0e4076b87766ae58bc4bfc2e6df10769a642a08d952192efbddcee8aeb0892d5b44619d91887c1e719b071bdbb5029d77037c872870946279118fb47903f78c533fd108aefe73ebbf3dc37421e5f791a4bdb2eab2c00eab7f54c4cc739adbc5fdfe7f3e3a5b77fdedf6b7304ced0dd35a887b191f79f3a0f79f773afcdcf116287c6f12d03b83b624be83cdee906fc1abe5542e0ff8c800b80aa83932f6f97bac8294c198846ef6ec61ccfbae6652172f5be48618fa8a7e64ac7c2450ca859c320d15f7087fc03a6a9315a354606c1c11acc3a251f0085218f2f7dbb014c6f1c543b3fcdd6ddcd0e36496ec241eae273cb1051d2d81209183"
   }
  ],
  "signed": {
@@ -11,9 +11,38 @@
    "keys": {},
    "roles": []
   },
-  "expires": "2021-12-23T22:26:11Z",
+  "expires": "2022-01-15T00:00:00Z",
   "spec_version": "1.0",
-  "targets": {},
-  "version": 1
+  "targets": {
+   "DCCouncil/law-html": {
+    "hashes": {
+     "sha256": "a556baea16c8ae8baae23f4fc084b334a6d9a34f2bef036e9ca032a30f397f3c",
+     "sha512": "c0940feb070f4f1f7c95b95c61cb4668c83dcacead4f955aa7426dc203de010477e6ff5bb9c5e4a09c8928d0cfacb5a5381ebe7efbfe49971b5da7c4fc54f586"
+    },
+    "length": 132
+   },
+   "DCCouncil/law-xml": {
+    "hashes": {
+     "sha256": "df80de808cc80b6856e7910425b639b208abc8052f87a88bf1ad0ed58b8f9084",
+     "sha512": "65ab55dc890ffdf4da9ccee7044923fc4aa48d5c5cc80a7ed8e963caffd79f3c51d0389ef66acff79921bf3f7bc6c608c479ddcf0da153f2023b5e7c6db89a48"
+    },
+    "length": 114
+   },
+   "DCCouncil/law-xml-codified": {
+    "hashes": {
+     "sha256": "a556baea16c8ae8baae23f4fc084b334a6d9a34f2bef036e9ca032a30f397f3c",
+     "sha512": "c0940feb070f4f1f7c95b95c61cb4668c83dcacead4f955aa7426dc203de010477e6ff5bb9c5e4a09c8928d0cfacb5a5381ebe7efbfe49971b5da7c4fc54f586"
+    },
+    "length": 132
+   },
+   "branch": {
+    "hashes": {
+     "sha256": "37852987fb1b5e7035b279bf520c8a578a231d8c44ace9a6847d51e1c55cb279",
+     "sha512": "8c4c1a498cc55ebade3faae4187601a8ec2e014bef0b48d2adfa719d13f30b39a36596f1fe72f69d9ce5aa6c48936f255163c8551a9a5c2f07b8f781a76601c3"
+    },
+    "length": 36
+   }
+  },
+  "version": 2
  }
 }
