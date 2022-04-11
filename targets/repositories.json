@@ -17,7 +17,7 @@
         },
         "DCCouncil/law-html": {
             "custom": {
-                "preview":"https://github.com/DCCouncil/law-html-preview.git",
+                "preview":"git@github.com:DCCouncil/law-html-preview.git",
                 "type":"html",
                 "serve":"historical",
                 "location_regex":"/"
@@ -25,7 +25,7 @@
         },
         "DCCouncil/law-xml-codified": {
             "custom": {
-                "preview":"https://github.com/DCCouncil/law-xml-codified-preview.git",
+                "preview":"git@github.com:DCCouncil/law-xml-codified-preview.git",
                 "type":"xml-codified",
                 "serve":"historical",
                 "serve-prefix":"_xml"
