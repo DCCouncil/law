@@ -4,7 +4,10 @@
             "custom": {
                 "allow-unauthenticated-commits":true,
                 "serve":"latest",
-                "location_regex":"~/.*\\.pdf$"
+                "location_regex":"~/.*\\.pdf$",
+                "routes": [
+                    ".*\\.pdf"
+                ]
             }
         },
         "DCCouncil/law-xml": {
@@ -20,7 +23,10 @@
                 "preview":"git@github.com:DCCouncil/law-html-preview.git",
                 "type":"html",
                 "serve":"historical",
-                "location_regex":"/"
+                "location_regex":"/",
+                "routes": [
+                    ".*"
+                ]
             }
         },
         "DCCouncil/law-xml-codified": {
@@ -36,7 +42,12 @@
                 "type":"static-assets",
                 "allow-unauthenticated-commits":true,
                 "serve":"latest",
-                "location_regex":"~.+(_document|_reader).+$"
+                "location_regex":"~.+(_document|_reader).+$",
+                "is_fallback": true,
+                "routes": [
+                    ".*/_document/.*",
+                    "_reader/.*"
+                ]
             }
         }
     }
