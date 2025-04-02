@@ -2,7 +2,7 @@
  "signatures": [
   {
    "keyid": "3ee0cbbdea49d1698ee17d6eb1f6c160315800026dfc29f810e0a216fa1b7e68",
-   "sig": "b51fcab0248880fb929b9adb5d44e26be134c0cc6ac308bbceb2e2dd9dcc0fb5ba55c7bd1ac2ba752f1d9ac14e9b4b5a4c0c78d55c56755989bdbde27f730f4bd54bd14b6a0e7e1525f51a5053295c3c6e7bcc8a545c81a1f2d37a937ca89590c2ffb5c3ccbeb9adcd4bf5b2c707caa92846c08919be1a546619829fa1542db7e78af12501245e507bd37b74c58a90584c6fcef41a8a84a993a8b2545f6cf305db679ad59e23477bec0b009dd8123795a34423c0794e0fe69e1f4e117f44184bdf072ede882cf4b5eacb96ed0fb4addb84f97fcc4dfa941be59e182397be76817995fb6f55d3cc71d324d50b0a47cb2729150e3665bfbc085dc832a4ccc1d6d7"
+   "sig": "e05578024f42d397d08e5039c4c685be6ef877133e7fb80c195de26c0ebd58b12e588ced23a5f4c69658fc847ef7a072732269795193143509b0e30c9491ab9da73cff480041bd202192d3dc664e2d48b66b8b83baa0216572e7a9cba406470248745cc70745774331865e782c8ac96eb9cd1abdecfa3467a122f7219e021f8bd29558ef47c830594ddff8783456f3cd3ac16fce88eb3232ea639678992cee650f4c0430cd0a1cdaf6fd01cfceb974eae05ed52df4de4a119b36d7d992a67a008e29e7601d697b541762888680d9002150dd9f849196345d2a29ef2e6daf137bcfc607ecab210fe5c10e2f052e9956c60a8b7c450f04abb14d96947ad3c77a3e"
   }
  ],
  "signed": {
@@ -21,14 +21,11 @@
      "scheme": "rsa-pkcs1v15-sha256"
     },
     "3ee0cbbdea49d1698ee17d6eb1f6c160315800026dfc29f810e0a216fa1b7e68": {
-     "keyid_hash_algorithms": [
-      "sha256",
-      "sha512"
-     ],
      "keytype": "rsa",
      "keyval": {
-      "public": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6OyuwnpYgc3asb9sp8rR\nI+8IBFubCsnVoNooFwK0I/mHVM37PA6GOgsfvDcwYVO5hxTSzkiiPXVkXcQvQIqj\nxYM+mIvRMoMMZYGe7FG5lyKCsOkAyRVouc65aemcpL3YvfJfk6d0emv178x5Npge\nV+mHu5FTSPmxvHH2yMQms9o8TWlrDQUBn6s24s/FFTu4Z2SQbJHhJTgFpHIl50Bq\nE28NJLSG5KI5waEaA/oQTATTLGVF/nsVouZQop34CzObpPzD+r7XqrTT7IquEfDj\nwKeCE6UWrypkCo6k7hdv9ZV/oihqeSNMzsyppvfiH9tfMS+sjte43yn5YjME9ZPd\nYwIDAQAB\n-----END PUBLIC KEY-----"
+      "public": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6OyuwnpYgc3asb9sp8rR\nI+8IBFubCsnVoNooFwK0I/mHVM37PA6GOgsfvDcwYVO5hxTSzkiiPXVkXcQvQIqj\nxYM+mIvRMoMMZYGe7FG5lyKCsOkAyRVouc65aemcpL3YvfJfk6d0emv178x5Npge\nV+mHu5FTSPmxvHH2yMQms9o8TWlrDQUBn6s24s/FFTu4Z2SQbJHhJTgFpHIl50Bq\nE28NJLSG5KI5waEaA/oQTATTLGVF/nsVouZQop34CzObpPzD+r7XqrTT7IquEfDj\nwKeCE6UWrypkCo6k7hdv9ZV/oihqeSNMzsyppvfiH9tfMS+sjte43yn5YjME9ZPd\nYwIDAQAB\n-----END PUBLIC KEY-----\n"
      },
+     "name": "rdf1",
      "scheme": "rsa-pkcs1v15-sha256"
     },
     "9f29dad890655f611f048f3704e59609c13454b16b9a67167a5a49ce3a17bf6a": {
@@ -100,6 +97,19 @@
      ],
      "terminating": true,
      "threshold": 1
+    },
+    {
+     "keyids": [
+      "3ee0cbbdea49d1698ee17d6eb1f6c160315800026dfc29f810e0a216fa1b7e68"
+     ],
+     "name": "rdf",
+     "paths": [
+      "DCCouncil/law-rdf",
+      "rdf/branch",
+      "rdf/capstone"
+     ],
+     "terminating": true,
+     "threshold": 1
     }
    ]
   },
@@ -128,6 +138,6 @@
     "length": 1627
    }
   },
-  "version": 18
+  "version": 19
  }
 }
