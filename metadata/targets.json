@@ -2,7 +2,7 @@
  "signatures": [
   {
    "keyid": "012286f4b50631b55d3b33c91ca740a1354bd1e5a17502a345e78429d274359e",
-   "sig": "06a16b61879262a82bff4b01029a0a918dd44889934b49bbdedbc8fbd0f88fd953bf9d78e8e1cdce76b27d3fce94ca4e347ba70bb7a6eadad4bb4e3c14832c89e49ceedc3ae92d8b36dbc9942e4ff9a884cc5807992fb4f7902c874eda31a76e6a6083dd88677b2203f08037b089432e79e7efaf2970b657c1f7157015a04b54a66f38a68456032b1627940da886a04dc9417203ef980c92d50e4560f43adeae6587c49b5486092cd2b9b7bba6a17359c0ae7490f2caa8b50c9cae00ae1f06968afecc41164edc5a429f138a79f633b6abee12c47f614b73fc0a098f6c259b584c9ad0ac0ba6efd1aa90573e8b142e23a93c5168a2768f7286752daa4fed589f"
+   "sig": "7e0fd43583fc52aad2b797ca3b7d1a129910d3febac878f88da7b4168648f3ed103d9996a29a081646a143fe3cece915f5e1d5b97d3fd5c99c89bbf9a20ccd77d499262cc6810519dca46d63f11c1d5ceb6b319dee8e8ba2c7c9acacecee537f9fa7caae94aa728f7791605785e9341e1629769c11aee57c7b5babc6f3afd870b1dbe9ef9796799a5d94c9178a5706d1b71805a676b3aca82e8d95765509c1b4b185d89c7b59da1865d4c168b4bc06eec473ca56db1afe6ca295499a44351f612403e2244c8194f4cbd9c9f22b0431cee51f6d4ba0d44ffbd41626958deb11a0fa752aef7eda5edb727fa5d0272c7f804a8d06fa37c498fb9e1b71b63400c9f8"
   }
  ],
  "signed": {
@@ -16,8 +16,9 @@
      ],
      "keytype": "rsa",
      "keyval": {
-      "public": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuCTD6r9vD26BOLMdVWdU\nvgtrl8cFKBv0dmVIdfesAYDkr7v5XbmDSBYxBUBgTIPUo4/vw/AW5wf87AMqb0bk\nFGn6kkv0PBIq3ZuW9pCd6oET/nsdV+4DHhPjwDCA2XvMYM7Sg3OXx9LtR0nt2A5V\nTX5n7EKcKo0WYy60+QqL/Ecc6Pv2kes4dasZe+xBpaan+aouaoO5bHLSHdRv8gny\n/1Ck2FNavVvmbA7cJURYolN4PxV4fzIOcht+3AICvh/e+MwCGb09dxQ6cnGZECNP\nN6gTWXMpeCd7T5obAnHO/QDOA0xxv0BDRSE9m4Ob3/XKbARm3gzALriRfwEx2vOX\ngwIDAQAB\n-----END PUBLIC KEY-----"
+      "public": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuCTD6r9vD26BOLMdVWdU\nvgtrl8cFKBv0dmVIdfesAYDkr7v5XbmDSBYxBUBgTIPUo4/vw/AW5wf87AMqb0bk\nFGn6kkv0PBIq3ZuW9pCd6oET/nsdV+4DHhPjwDCA2XvMYM7Sg3OXx9LtR0nt2A5V\nTX5n7EKcKo0WYy60+QqL/Ecc6Pv2kes4dasZe+xBpaan+aouaoO5bHLSHdRv8gny\n/1Ck2FNavVvmbA7cJURYolN4PxV4fzIOcht+3AICvh/e+MwCGb09dxQ6cnGZECNP\nN6gTWXMpeCd7T5obAnHO/QDOA0xxv0BDRSE9m4Ob3/XKbARm3gzALriRfwEx2vOX\ngwIDAQAB\n-----END PUBLIC KEY-----\n"
      },
+     "name": "server1",
      "scheme": "rsa-pkcs1v15-sha256"
     },
     "08900f0f2631faac2fdd818031e399cd896523e5de0c080125187b4b7d664885": {
@@ -113,6 +114,19 @@
      ],
      "terminating": true,
      "threshold": 1
+    },
+    {
+     "keyids": [
+      "012286f4b50631b55d3b33c91ca740a1354bd1e5a17502a345e78429d274359e"
+     ],
+     "name": "rdf",
+     "paths": [
+      "DCCouncil/law-rdf",
+      "rdf/branch",
+      "rdf/capstone"
+     ],
+     "terminating": true,
+     "threshold": 1
     }
    ]
   },
@@ -141,6 +155,6 @@
     "length": 1627
    }
   },
-  "version": 19
+  "version": 20
  }
 }
