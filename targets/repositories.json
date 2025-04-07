@@ -49,6 +49,13 @@
                     "_reader/.*"
                 ]
             }
+        },
+        "DCCouncil/law-rdf": {
+            "custom": {
+                "serve": "latest",
+                "type": "rdf",
+                "serve-prefix": "_rdf"
+            }
         }
     }
 }
