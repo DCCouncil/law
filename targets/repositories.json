@@ -23,10 +23,7 @@
                 "preview": "git@github.com:DCCouncil/law-html-preview.git",
                 "type": "html",
                 "serve": "historical",
-                "location_regex": "/",
-                "routes": [
-                    ".*"
-                ]
+                "archived": true
             }
         },
         "DCCouncil/law-xml-codified": {
